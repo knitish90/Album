@@ -1,5 +1,5 @@
 //
-//  Tracks.swift
+//  AlbumCellViewModel.swift
 //  Albums
 //
 //  Created by Nitish.kumar on 23/08/20.

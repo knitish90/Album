@@ -1,24 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Album List View Controller-->
+        <scene sceneID="Vxi-LD-Aau">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="AlbumListViewController" id="oeW-oJ-0hR" customClass="AlbumListViewController" customModule="Albums" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LAU-YL-D6V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w8E-Y0-qKo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="832"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlbumListCell" rowHeight="100" id="L6u-Rn-6ID" userLabel="AlbumListCell" customClass="AlbumListCell" customModule="Albums" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L6u-Rn-6ID" id="nJi-V3-RIo">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="AXA-1W-YSb">
+                                                    <rect key="frame" x="16" y="30" width="40" height="40"/>
+                                                    <accessibility key="accessibilityConfiguration" label="ContactListCell_profileImage"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="ktF-VJ-dap"/>
+                                                        <constraint firstAttribute="height" constant="40" id="rNT-Ol-ofv"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="corner_Radius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wt-gZ-Hp5">
+                                                    <rect key="frame" x="72" y="10" width="317" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" label="ContactListCell_NameLabel"/>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                                    <color key="textColor" red="0.054901960784313725" green="0.054901960784313725" blue="0.054901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoF-g5-smR">
+                                                    <rect key="frame" x="72" y="33" width="317" height="13.5"/>
+                                                    <accessibility key="accessibilityConfiguration" label="ContactListCell_NameLabel"/>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="11"/>
+                                                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2G-IT-zOX">
+                                                    <rect key="frame" x="72" y="48.5" width="317" height="13.5"/>
+                                                    <accessibility key="accessibilityConfiguration" label="ContactListCell_NameLabel"/>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="11"/>
+                                                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTp-BC-Ggb">
+                                                    <rect key="frame" x="72" y="64" width="317" height="13.5"/>
+                                                    <accessibility key="accessibilityConfiguration" label="ContactListCell_NameLabel"/>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="11"/>
+                                                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmQ-I7-MjL">
+                                                    <rect key="frame" x="72" y="79.5" width="317" height="13.5"/>
+                                                    <accessibility key="accessibilityConfiguration" label="ContactListCell_NameLabel"/>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="11"/>
+                                                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="m2G-IT-zOX" firstAttribute="leading" secondItem="AXA-1W-YSb" secondAttribute="trailing" constant="16" id="JkL-YW-Tmk"/>
+                                                <constraint firstItem="UmQ-I7-MjL" firstAttribute="top" secondItem="xTp-BC-Ggb" secondAttribute="bottom" constant="2" id="KC2-gR-0ih"/>
+                                                <constraint firstItem="UmQ-I7-MjL" firstAttribute="leading" secondItem="nJi-V3-RIo" secondAttribute="leading" constant="72" id="Qy2-3r-3hU"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Wt-gZ-Hp5" secondAttribute="trailing" constant="25" id="TpA-DU-BVo"/>
+                                                <constraint firstAttribute="bottom" secondItem="UmQ-I7-MjL" secondAttribute="bottom" constant="7" id="ULE-Vn-JUg"/>
+                                                <constraint firstAttribute="trailing" secondItem="xTp-BC-Ggb" secondAttribute="trailing" constant="25" id="VyW-id-Q9e"/>
+                                                <constraint firstAttribute="trailing" secondItem="UmQ-I7-MjL" secondAttribute="trailing" constant="25" id="ZPi-Ya-Njs"/>
+                                                <constraint firstItem="AXA-1W-YSb" firstAttribute="leading" secondItem="nJi-V3-RIo" secondAttribute="leading" constant="16" id="aHH-GQ-5u1"/>
+                                                <constraint firstItem="hoF-g5-smR" firstAttribute="leading" secondItem="AXA-1W-YSb" secondAttribute="trailing" constant="16" id="c0h-er-L9Z"/>
+                                                <constraint firstItem="m2G-IT-zOX" firstAttribute="top" secondItem="hoF-g5-smR" secondAttribute="bottom" constant="2" id="dHi-kx-j9C"/>
+                                                <constraint firstItem="9Wt-gZ-Hp5" firstAttribute="top" secondItem="nJi-V3-RIo" secondAttribute="top" constant="10" id="dxs-d9-8Xy"/>
+                                                <constraint firstItem="hoF-g5-smR" firstAttribute="top" secondItem="9Wt-gZ-Hp5" secondAttribute="bottom" constant="2" id="i9w-Dx-VTO"/>
+                                                <constraint firstAttribute="trailing" secondItem="m2G-IT-zOX" secondAttribute="trailing" constant="25" id="mQP-Ee-RP9"/>
+                                                <constraint firstItem="9Wt-gZ-Hp5" firstAttribute="leading" secondItem="nJi-V3-RIo" secondAttribute="leading" constant="72" id="pfw-ge-4qr"/>
+                                                <constraint firstItem="xTp-BC-Ggb" firstAttribute="top" secondItem="m2G-IT-zOX" secondAttribute="bottom" constant="2" id="po5-e9-7qO"/>
+                                                <constraint firstItem="xTp-BC-Ggb" firstAttribute="leading" secondItem="AXA-1W-YSb" secondAttribute="trailing" constant="16" id="tSK-aa-pc0"/>
+                                                <constraint firstAttribute="trailing" secondItem="hoF-g5-smR" secondAttribute="trailing" constant="25" id="zst-1h-BfG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="AXA-1W-YSb" firstAttribute="centerY" secondItem="L6u-Rn-6ID" secondAttribute="centerY" id="0iN-HU-yNX"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="artistNameLabel" destination="9Wt-gZ-Hp5" id="q21-dY-9QW"/>
+                                            <outlet property="collectionNameLabel" destination="m2G-IT-zOX" id="zaO-Cb-kH6"/>
+                                            <outlet property="collectionPriceLabel" destination="xTp-BC-Ggb" id="BrK-SB-pAz"/>
+                                            <outlet property="profileImageView" destination="AXA-1W-YSb" id="NrO-eD-d3u"/>
+                                            <outlet property="releaseDateLabel" destination="UmQ-I7-MjL" id="Ulj-cf-Qfb"/>
+                                            <outlet property="trackNameLabel" destination="hoF-g5-smR" id="5l4-HT-7Ag"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oeW-oJ-0hR" id="AMO-zL-C8k"/>
+                                    <outlet property="delegate" destination="oeW-oJ-0hR" id="c7v-4L-q56"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="w8E-Y0-qKo" firstAttribute="trailing" secondItem="TVd-XA-vW0" secondAttribute="trailing" id="Nhh-Am-H1P"/>
+                            <constraint firstAttribute="bottom" secondItem="w8E-Y0-qKo" secondAttribute="bottom" constant="20" symbolic="YES" id="SfO-Zm-taR"/>
+                            <constraint firstItem="w8E-Y0-qKo" firstAttribute="leading" secondItem="TVd-XA-vW0" secondAttribute="leading" id="hFJ-Pv-d1G"/>
+                            <constraint firstItem="w8E-Y0-qKo" firstAttribute="top" secondItem="TVd-XA-vW0" secondAttribute="top" id="u4s-Sf-viP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TVd-XA-vW0"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="w8E-Y0-qKo" id="9eY-vN-bZI"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ox8-m0-lF9" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2931.8840579710145" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="750" height="750"/>
+    </resources>
 </document>
