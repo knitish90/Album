@@ -8,3 +8,17 @@ assignment details :
 
 3.have follwed the solid principle 
 
+4.have written the Unit and UI Test cases by using XCTest
+
+5. have implemented "sort By" feature
+
+project architecture deisgn
+
+						Coordinator
+							 I
+							 |
+Model <—— ViewModel <——— View
+			      |
+			      V
+		    Service ————>Network Layer
+
