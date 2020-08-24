@@ -27,7 +27,7 @@ extension String {
 extension Date {
     func toString() -> String {
         let formatter1 = DateFormatter()
-        formatter1.dateStyle = .short
+        formatter1.dateStyle = .long
         let strDate = formatter1.string(from: self)
         return strDate
     }
