@@ -14,11 +14,11 @@ assignment details :
 
 project architecture deisgn
 
-						Coordinator
-							 I
-							 |
+	 Coordinator
+	      I
+	      |
 Model <—— ViewModel <——— View
-			      |
-			      V
-		    Service ————>Network Layer
+	      |
+	      V
+          Service ————>Network Layer
 
