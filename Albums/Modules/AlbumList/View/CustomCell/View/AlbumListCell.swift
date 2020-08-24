@@ -36,7 +36,7 @@ class AlbumListCell: UITableViewCell {
         trackNameLabel.text =   "Track Name: \(cellModel.trackCensoredName)"
         collectionNameLabel.text    =   "CollectionName : \(cellModel.collectionName ?? "")"
         collectionPriceLabel.text   =   "Price: \(String(cellModel.collectionPrice))"
-        //releaseDateLabel.text   =   String(cellModel.releaseDate)
+        releaseDateLabel.text   =   "Release Date: \(cellModel.releaseDate.toString())"
         
     }
 

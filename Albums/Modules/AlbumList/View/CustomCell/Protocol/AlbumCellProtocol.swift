@@ -23,4 +23,5 @@ protocol AlbumCellViewModelProtocol {
     var previewURL: String{ get}
     var artworkUrl : String { get}
     var collectionPrice : Double { get }
+    var releaseDate : Date{get}
 }

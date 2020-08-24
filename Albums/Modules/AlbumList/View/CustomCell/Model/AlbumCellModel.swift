@@ -23,6 +23,7 @@ struct AlbumCellModel : AlbumCellViewModelProtocol {
     var trackViewURL: String
     var previewURL: String
     var collectionPrice : Double
+    var releaseDate: Date
     init(result : Result) {
         self.artistID = result.artistID
         self.collectionID  =    result.collectionID
@@ -39,6 +40,7 @@ struct AlbumCellModel : AlbumCellViewModelProtocol {
         self.trackCensoredName =   result.trackCensoredName
         self.artworkUrl  =   result.artworkUrl100
         self.collectionPrice    =   result.collectionPrice
+        self.releaseDate    =   result.releasedDate
     }
     
 }

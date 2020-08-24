@@ -27,6 +27,9 @@ struct Result: Codable {
     let artworkUrl100: String
     let collectionPrice: Double
     let releaseDate : String
+    var releasedDate : Date {
+        return releaseDate.toDate()
+    }
     enum CodingKeys: String, CodingKey {
         case artistID = "artistId"
         case collectionID = "collectionId"

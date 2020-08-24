@@ -14,6 +14,7 @@ enum SortOptions: String, CaseIterable {
     case TrackName  =   "Track name"
     case CollectionName =   "Collection name"
     case CollectionPrice    =   "Collection price"
+    case ReleaseDate    =   "Release date"
 }
 
 class AlbumListViewModel: AlbumListViewModelProtocol {
@@ -57,13 +58,17 @@ class AlbumListViewModel: AlbumListViewModelProtocol {
             return dataSource.sorted { (id1, id2) -> Bool in
                 return id1.collectionPrice < id2.collectionPrice
             }
+        case .ReleaseDate:
+            return dataSource.sorted { (id1, id2) -> Bool in
+                return id1.releaseDate < id2.releaseDate
+            }
         }
     }
     func fetchAlbums() {
         service.getAlbumList{ (error, album) in
             DispatchQueue.main.async {
                 self.album  =   album
-                self.prepareDataSource(with: .ArtistName)
+                self.prepareDataSource(with: .ReleaseDate)
                 self.didDataLoaded?(error)
             }
         }
